@@ -6,7 +6,6 @@ import axios from 'axios';
 export default function ListingPage() {
 
     const [listings, setListings] = useState([]);
-    const [errorMsg, setErrorMsg] = useState('');
     const [filters, setFilters] = useState({
         s: '',
         page: 1
@@ -16,14 +15,10 @@ export default function ListingPage() {
     useEffect(() => {
 
         const fetchListings = async () => {
-            try {
-                const res = await axios.get(`listings?page=${filters.page}&category=${filters.s}`);
-                setListings(filters.page === 1 ? res.data.data : (listings) => [...listings, ...res.data.data]);
-                setLastPage(res.data.last_page);
-                setErrorMsg('');
-            } catch (error) {
-                setErrorMsg('Error getting data')
-            }
+            const res = await axios.get(`listings?page=${filters.page}&category=${filters.s}`);
+            setListings(filters.page === 1 ? res.data.data : (listings) => [...listings, ...res.data.data]);
+            setLastPage(res.data.last_page);
+            
         }
         fetchListings();
     }, [filters])
@@ -46,7 +41,7 @@ export default function ListingPage() {
     }
     return (
         <>
-            <Navbar setFilters={setFilters} filters={filters} />
+            <Navbar setFilters={setFilters}  />
             <ListingComponent listings={listings} />
             <div className="flex justify-center items-center">
                 {button}

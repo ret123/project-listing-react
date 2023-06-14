@@ -37,12 +37,12 @@ export default function Navbar(props) {
         <nav className="mt-16 px-4 py-4">
             <div className="flex flex-col items-center md:flex-row mt-6 justify-center text-sm lg:flex-grow">
 
-                <button onClick={handleAll} className={`bg-transparent hover:bg-blueGray-300 text-blueGray-300 hover:text-coolGray-600 py-2 px-4 mr-6 mb-2 w-176 h-50 border border-blue hover:border-transparent rounded uppercase ${active === 'All' ? "bg-gray-300 text-gray-600" : " "}`}>
+                <button onClick={handleAll} className={`bg-transparent hover:bg-blueGray-300 text-blueGray-300 hover:text-coolGray-600 py-2 px-4 mr-6 mb-2 w-176 h-50 border border-blue hover:border-transparent rounded uppercase ${active === 'All' ? "bg-slate-300 text-gray-600" : " "}`}>
                     All
                 </button>
                 {categories.map((cat) => {
                     return (
-                        <button onClick={() => handleClick(cat.id)} key={cat.id} className={`bg-transparent hover:bg-blueGray-300  text-blueGray-300 hover:text-coolGray-600 py-2 px-4 mr-6  mb-2 w-176 h-50 border border-blue hover:border-transparent rounded uppercase ${active === cat.id ? "bg-gray-300 text-gray-600" : " "}`}
+                        <button onClick={() => handleClick(cat.id)} key={cat.id} className={`bg-transparent hover:bg-blueGray-300  text-blueGray-300 hover:text-coolGray-600 py-2 px-4 mr-6  mb-2 w-176 h-50 border border-blue hover:border-transparent rounded uppercase ${active === cat.id ? "bg-slate-300 text-gray-600" : " "}`}
                         >
                             {cat.name}
                         </button>

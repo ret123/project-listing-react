@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function ListingComponent({ listings }) {
     return (
-        <div className="flex flex-col items-center md:flex-row flex-wrap my-16">
+        <div className="flex flex-col items-center justify-center md:flex-row flex-wrap my-4">
             {listings.map((listing, index) => {
                 return (
                     <div key={index} className="p-4 flex flex-col justify-center items-center">
@@ -17,7 +17,5 @@ export default function ListingComponent({ listings }) {
                 );
             })}
         </div>
-
     )
-
 }
