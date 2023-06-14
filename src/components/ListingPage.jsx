@@ -1,10 +1,7 @@
-
 import React, { useEffect, useState } from 'react'
 import Navbar from './Navbar'
 import ListingComponent from './ListingComponent'
 import axios from 'axios';
-
-
 
 export default function ListingPage() {
 
@@ -16,26 +13,17 @@ export default function ListingPage() {
     })
     const [lastPage, setLastPage] = useState(0);
 
-
-
-
-
     useEffect(() => {
 
         const fetchListings = async () => {
             try {
                 const res = await axios.get(`listings?page=${filters.page}&category=${filters.s}`);
-                console.log(res);
                 setListings(filters.page === 1 ? res.data.data : (listings) => [...listings, ...res.data.data]);
                 setLastPage(res.data.last_page);
                 setErrorMsg('');
             } catch (error) {
                 setErrorMsg('Error getting data')
-            } finally {
-
             }
-
-
         }
         fetchListings();
     }, [filters])
@@ -56,18 +44,13 @@ export default function ListingPage() {
             </button>
         )
     }
-
-
     return (
-        <div>
+        <div className="">
             <Navbar setFilters={setFilters} filters={filters} />
-
             <ListingComponent listings={listings} />
-
             <div className="flex justify-center items-center">
                 {button}
             </div>
-
         </div>
     )
 }
