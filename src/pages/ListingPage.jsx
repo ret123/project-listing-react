@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import Navbar from './Navbar'
-import ListingComponent from './ListingComponent'
+import Navbar from '../components/Navbar'
+import ListingComponent from '../components/ListingComponent'
 import axios from 'axios';
 
 export default function ListingPage() {
@@ -45,13 +45,13 @@ export default function ListingPage() {
         )
     }
     return (
-        <div className="">
+        <>
             <Navbar setFilters={setFilters} filters={filters} />
             <ListingComponent listings={listings} />
             <div className="flex justify-center items-center">
                 {button}
             </div>
-        </div>
+        </>
     )
 }
 

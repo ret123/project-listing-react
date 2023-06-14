@@ -1,14 +1,15 @@
-import {Routes,Route} from 'react-router-dom';
-import ListingPage from './components/ListingPage'
+import { Routes, Route } from 'react-router-dom';
+
 import './App.css';
+import ListingPage from './pages/ListingPage';
 
 function App() {
   return (
-   <div>
-       <Routes>
+    <div>
+      <Routes>
         <Route path={'/'} element={<ListingPage />} />
-       </Routes>
-   </div>
+      </Routes>
+    </div>
   )
 }
 
