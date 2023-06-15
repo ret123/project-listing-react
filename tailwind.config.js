@@ -10,6 +10,9 @@ module.exports = {
         'coolGray-600': '#4b5563',
         'coolGray-100': '#f3f4f6'
       },
+      fontFamily: {
+        title: ['Nunito']
+      },
       width: {
         '350': '350px',
        },

@@ -1,22 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer utilities {
     .mt-69 {
-      margin-top: 69px;
+        margin-top: 69px;
     }
 
     .mr-45 {
         margin-right: 45px;
     }
+
     .w-176 {
         width: 176px;
     }
+
     .h-50 {
         height: 50px;
     }
+
     .mt-297 {
         margin-top: 297px;
     }
-  }
+}

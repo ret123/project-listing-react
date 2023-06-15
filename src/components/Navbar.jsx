@@ -4,7 +4,7 @@ import axios from 'axios';
 export default function Navbar(props) {
 
     const [categories, setCategories] = useState([]);
-    const [active, SetActive] = useState('All');
+    const [active, SetActive] = useState(0);
 
 
     const fetchCategories = async () => {
@@ -23,6 +23,8 @@ export default function Navbar(props) {
 
         })
         SetActive(s);
+        
+        
     }
 
     const handleAll = () => {
@@ -30,19 +32,27 @@ export default function Navbar(props) {
             s: '',
             page: 1
         })
-        SetActive('All');
+        SetActive(0);
     }
 
     return (
         <nav className="mt-16 px-4 py-4">
             <div className="flex flex-col items-center md:flex-row mt-6 justify-center text-sm lg:flex-grow">
 
-                <button onClick={handleAll} className={`bg-transparent hover:bg-blueGray-300 text-blueGray-300 hover:text-coolGray-600 py-2 px-4 mr-6 mb-2 w-176 h-50 border border-blue hover:border-transparent rounded uppercase ${active === 'All' ? "bg-slate-300 text-gray-600" : " "}`}>
+                <button 
+                    onClick={handleAll} 
+                    className={`font-title bg-transparent hover:bg-blueGray-300 text-blueGray-300 hover:text-coolGray-600 py-2 px-4 mr-6 mb-2 w-176 h-50 border border-blue hover:border-transparent rounded uppercase ${active === 0 ? "text-gray-600" : " "}`}
+                    style={{backgroundColor: active === 0 ? '#cbd5e1' : '' }}    
+                >
                     All
                 </button>
                 {categories.map((cat) => {
                     return (
-                        <button onClick={() => handleClick(cat.id)} key={cat.id} className={`bg-transparent hover:bg-blueGray-300  text-blueGray-300 hover:text-coolGray-600 py-2 px-4 mr-6  mb-2 w-176 h-50 border border-blue hover:border-transparent rounded uppercase ${active === cat.id ? "bg-slate-300 text-gray-600" : " "}`}
+                        <button 
+                        onClick={() => handleClick(cat.id)}
+                        key={cat.id} 
+                        className={`font-title bg-transparent hover:bg-blueGray-300  text-blueGray-300 hover:text-coolGray-600 py-2 px-4 mr-6  mb-2 w-176 h-50 border border-blue hover:border-transparent rounded uppercase ${active == cat.id ? "text-gray-600" : " "}`}
+                        style={{backgroundColor: active === cat.id ? '#cbd5e1' : '' }}    
                         >
                             {cat.name}
                         </button>

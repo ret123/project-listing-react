@@ -10,7 +10,7 @@ export default function ListingComponent({ listings }) {
                         <div className="flex justify-center items-center w-350 h-350 bg-coolGray-100 rounded  shadow-lg">
                             <div className='bg-blueGray-300 w-24 h-20 rounded'></div>
                         </div>
-                        <div className='flex justify-center text-white items-center mt-4 mb-6'>
+                        <div className='flex justify-center font-title font-normal text-white text-2xl items-center mt-4 mb-6'>
                             {listing.title}
                         </div>
                     </div>
