@@ -28,7 +28,6 @@ export default function ListingPage() {
     }, [filters])
 
     const handleLoadMore = () => {
-        // if(filters.page === lastPage) return;
         setFilters({
             ...filters,
             page: filters.page + 1
@@ -54,8 +53,8 @@ export default function ListingPage() {
         return (
             <div className="flex justify-center items-center h-screen">
                 <Circles
-                height="80"
-                width="80"
+                height="120"
+                width="120"
                 color="#F3F4F6"
                 ariaLabel="circles-loading"
                 wrapperStyle={{}}
@@ -66,13 +65,13 @@ export default function ListingPage() {
         )
     }
     return (
-        <>
+        <div className='container mx-auto'>
             <Navbar setFilters={setFilters} />
             <ListingComponent listings={listings} />
             <div className="flex justify-center items-center">
                 {button}
             </div>
-        </>
+        </div>
     )
 }
 
