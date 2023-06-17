@@ -7,7 +7,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 // axios.defaults.baseURL = 'http://localhost:8000/api/';
-axios.defaults.baseURL = 'https://5088-49-36-97-33.in.ngrok.io/api/';
+axios.defaults.baseURL = 'https://2180-49-36-97-145.in.ngrok.io/api/';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
