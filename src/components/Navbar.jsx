@@ -11,7 +11,6 @@ export default function Navbar(props) {
             
             const res = await axios.get('categories');
             setCategories(res.data);
-            props.setLoading(false);
             console.log(categories.length)
         } catch(error) {
             props.setError(error.message)
@@ -46,7 +45,7 @@ export default function Navbar(props) {
 
     return (
         // margin-top: is 63px according to wireframe. So applied custom tailwind size of 63px
-        <nav className='grid grid-cols-2 md:grid-cols-6 gap-2 px-2 mx-2 mt-63'>
+        <nav className='grid grid-cols-2 md:grid-cols-6 gap-2 px-8 mt-63'>
                {categories.map((cat) => {
                     return (
                         <button 

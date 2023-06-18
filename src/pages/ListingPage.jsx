@@ -113,7 +113,7 @@ export default function ListingPage() {
             <Navbar setFilters={setFilters} setLoading={setLoading} setError={setError}  />
             <ListingComponent listings={listings} />
             <div className="flex justify-center items-center">
-                {filters.page !== lastPage ? button : ''}
+                {filters.page !== lastPage && !loading && listings.length > 0 ? button : ''}
             </div>
             {showTopBtn && (
                 <FaAngleUp
