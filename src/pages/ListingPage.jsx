@@ -69,7 +69,7 @@ export default function ListingPage() {
 
     let button;
     button = (
-        <button onClick={handleLoadMore} className="bg-coolGray-100 hover:bg-blueGray-300 text-coolGray-600  hover:text-coolGray-600 w-176 h-50 py-2 px-4 w-176 h-50 mr-6 mb-6 border border-blue hover:border-transparent rounded uppercase">
+        <button onClick={handleLoadMore} className="bg-coolGray-100 hover:bg-blueGray-300 text-coolGray-600  hover:text-coolGray-600 w-176 h-50 py-2 px-4 mr-6 mb-6 border border-blue hover:border-transparent rounded uppercase">
             {loading ? 'Loading....' : 'Load more'}
         </button>
     )

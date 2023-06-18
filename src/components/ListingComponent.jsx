@@ -6,7 +6,7 @@ export default function ListingComponent({ listings }) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-4 mt-12 md:mt-69">
             {listings.map((listing, index) => {
                 return (
-                    <div key={index} className="p-4 flex flex-col justify-center items-center">
+                    <div key={index} className="p-2 md:p-4 flex flex-col justify-center items-center">
                         <div className="flex justify-center items-center w-full h-60 md:card-h bg-coolGray-100 rounded shadow-lg">
                         <div className='bg-blueGray-300 w-24 h-20 rounded'></div>
                         </div>
