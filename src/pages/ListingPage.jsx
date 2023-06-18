@@ -26,7 +26,7 @@ export default function ListingPage() {
             const res = await axios.get(`listings?page=${filters.page}&category=${filters.s}`);
             setListings(filters.page === 1 ? res.data.data : (listings) => [...listings, ...res.data.data]);
             setLastPage(res.data.last_page);
-            setLoading(false);
+            
         } catch (error) {
             setError(error.message);
 
@@ -35,6 +35,11 @@ export default function ListingPage() {
         }
     }
     useEffect(() => {
+      fetchListings();
+                      
+    }, [filters])
+
+    useEffect(() => {
         window.addEventListener('scroll', () => {
             if (window.scrollY > 400) {
                 setShowTopBtn(true);
@@ -42,10 +47,10 @@ export default function ListingPage() {
                 setShowTopBtn(false);
             }
         });
-        fetchListings();
         window.history.scrollRestoration = 'manual'
-                
-    }, [filters])
+        setLoading(false);
+
+    },[])
 
     const handleLoadMore = () => {
         setFilters({

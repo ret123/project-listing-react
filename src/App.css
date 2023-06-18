@@ -6,9 +6,9 @@ body {
   /* background-image: linear-gradient(137deg, #535f6a 7.14%, #677581 7.14%, #677581 30.95%, #a6aaae 30.95%, #a6aaae 42.86%, #babbbd 42.86%, #babbbd 50%, #535f6a 50%, #535f6a 57.14%, #677581 57.14%, #677581 80.95%, #a6aaae 80.95%, #a6aaae 92.86%, #babbbd 92.86%, #babbbd 100%);
   background-size: 6000.81px ; */
   /* background: linear-gradient(130deg, #C0BEBE, #9EAFBC, #505D68, #9EAFBC); */
-  background: linear-gradient(135deg, #505D68 20%,#9EAFBC 20%, #C0BEBE 80%)
+  background: linear-gradient(135deg, #505D68 20%,#9EAFBC 20%, #C0BEBE 80%) 
+  
 }
-
 .top-to-btm{
   position: relative;
 }

@@ -26,7 +26,7 @@ export default function Navbar(props) {
     }, [])
 
     const handleClick = (s) => {
-    //    props.setLoading(true);
+       props.setLoading(true);
         if(s === 1) {
             props.setFilters({
                 s: '',
