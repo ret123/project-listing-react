@@ -9,7 +9,7 @@ import ListingComponent from '../components/ListingComponent'
 export default function ListingPage() {
 
     const [listings, setListings] = useState([]);
- 
+
     const [filters, setFilters] = useState({
         s: '',
         page: 1,
@@ -22,11 +22,11 @@ export default function ListingPage() {
 
     const fetchListings = async () => {
         try {
-            
+
             const res = await axios.get(`listings?page=${filters.page}&category=${filters.s}`);
             setListings(filters.page === 1 ? res.data.data : (listings) => [...listings, ...res.data.data]);
             setLastPage(res.data.last_page);
-            
+
         } catch (error) {
             setError(error.message);
 
@@ -34,11 +34,6 @@ export default function ListingPage() {
             setLoading(false);
         }
     }
-    useEffect(() => {
-      fetchListings();
-                      
-    }, [filters])
-
     useEffect(() => {
         window.addEventListener('scroll', () => {
             if (window.scrollY > 400) {
@@ -48,10 +43,10 @@ export default function ListingPage() {
             }
         });
         window.history.scrollRestoration = 'manual'
-        setLoading(false);
+        fetchListings();
 
-    },[])
-
+    }, [filters])
+  
     const handleLoadMore = () => {
         setFilters({
             ...filters,
@@ -73,7 +68,7 @@ export default function ListingPage() {
             {loading ? 'Loading....' : 'Load more'}
         </button>
     )
-   
+
     if (error) {
         return (
             <div className='container mx-auto'>
@@ -93,7 +88,7 @@ export default function ListingPage() {
     if (loading) {
         return (
             <div className='container mx-auto'>
-                 <Navbar setFilters={setFilters} setLoading={setLoading} setError={setError}  />
+                <Navbar setFilters={setFilters} setLoading={setLoading} setError={setError} />
                 <div className="flex justify-center items-center h-screen">
                     <Circles
                         height="120"
@@ -110,7 +105,7 @@ export default function ListingPage() {
     return (
         <div className="container mx-auto w-full">
 
-            <Navbar setFilters={setFilters} setLoading={setLoading} setError={setError}  />
+            <Navbar setFilters={setFilters} setLoading={setLoading} setError={setError} />
             <ListingComponent listings={listings} />
             <div className="flex justify-center items-center">
                 {filters.page !== lastPage && !loading && listings.length > 0 ? button : ''}
