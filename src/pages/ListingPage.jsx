@@ -6,6 +6,7 @@ import Navbar from '../components/Navbar'
 import ListingComponent from '../components/ListingComponent'
 
 
+
 export default function ListingPage() {
 
     const [listings, setListings] = useState([]);
@@ -44,7 +45,6 @@ export default function ListingPage() {
         });
         window.history.scrollRestoration = 'manual'
         fetchListings();
-
     }, [filters])
   
     const handleLoadMore = () => {
@@ -65,7 +65,7 @@ export default function ListingPage() {
     let button;
     button = (
         <button onClick={handleLoadMore} className="bg-coolGray-100 hover:bg-blueGray-300 text-coolGray-600  hover:text-coolGray-600 w-176 h-50 py-2 px-4 mr-6 mb-6 border border-blue hover:border-transparent rounded uppercase">
-            {loading ? 'Loading....' : 'Load more'}
+           Load more 
         </button>
     )
 
@@ -106,9 +106,10 @@ export default function ListingPage() {
         <div className="container mx-auto w-full">
 
             <Navbar setFilters={setFilters} setLoading={setLoading} setError={setError} />
+            {/* <ListingComponent listings={listings} /> */}
             <ListingComponent listings={listings} />
             <div className="flex justify-center items-center">
-                {filters.page !== lastPage && !loading && listings.length > 0 ? button : ''}
+                {filters.page !== lastPage  && listings.length > 0 ? button : ''}
             </div>
             {showTopBtn && (
                 <FaAngleUp

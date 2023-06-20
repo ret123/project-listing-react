@@ -13,6 +13,10 @@ module.exports = {
       fontFamily: {
         title: ['Nunito']
       },
+      padding: {
+        '1/2': '50%',
+        full: '100%',
+      },
       width: {
         '350': '350px',
        },
