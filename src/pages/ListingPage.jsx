@@ -106,7 +106,6 @@ export default function ListingPage() {
         <div className="container mx-auto w-full">
 
             <Navbar setFilters={setFilters} setLoading={setLoading} setError={setError} />
-            {/* <ListingComponent listings={listings} /> */}
             <ListingComponent listings={listings} />
             <div className="flex justify-center items-center">
                 {filters.page !== lastPage  && listings.length > 0 ? button : ''}
