@@ -8,7 +8,7 @@ export default function ListingComponent({ listings }) {
                     <div key={index} className='flex flex-col '>
                         <div className="square">
                             <div className="content">
-                                <img src="images/pic3.jpg" className='w-full h-full' alt="" />
+                                <img src="images/pic1.jpg" className='w-full h-full' alt="" />
                             </div>
 
                         </div>
